@@ -1,12 +1,17 @@
+@use '../abstracts/variables' as *;
+
 header {
   text-align: center;
   padding: 20px 0;
 
   .logo {
   font-size: 2.2rem;
+  font-weight:bold;
+  color:$footer-color;
+  margin-bottom: 10px;
 
   span {
-    color: #e91e63;
+    color: $framboise;
   }
 }
 
@@ -22,7 +27,7 @@ header {
 
       li a {
         text-decoration: none;
-        color: #333;
+        color: $font-color;
         font-weight: bold;
         font-size: 0.8rem;
       }
