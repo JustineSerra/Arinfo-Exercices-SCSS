@@ -1,67 +1,95 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .promotion {
-    background-color: $background-promotion;
-    padding: 40px 15px;
+  padding: 60px 0;
+  background-color: #f8f8f8;
 
-    .promo-card {
-        background-color: $white;
-        display: flex;
-        width:100%;
-        height:220px;
-        margin-bottom: 25px;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  .container {
+    // Les cartes s'empilent verticalement
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 40px;
+    width: 90%;
+    margin: 0 auto;
+  }
 
-        .promo-text {
-            flex: 1;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            text-align: center;
-        h1 { 
-            font-size: 1.2rem; 
-            font-weight: 900; 
-            text-transform: uppercase; 
-            color: #333;
-            margin: 0; 
-            &::after {
-                content: '';
-                display: block;
-                width: 40px;
-                height: 1px;
-                background: #ddd;
-                margin: 8px auto 0;
-                }
-            }
+  .promo-card {
+    // IMPORTANT : On force le flex ici pour que texte et image puissent être côte à côte
+    display: flex !important; 
+    flex-direction: column; // Mobile : texte en haut, image en bas
+    background-color: $white;
+    width: 100%;
+    max-width: 950px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 
-        p { 
-            font-size: 0.8rem; 
-            font-style: italic; 
-            color: #777; 
-            margin: 5px 0;
-            line-height: 1.3;
-        }
-
-        .btn-pink { 
-            background-color: $framboise;
-            color:$white;
-            text-decoration: none;
-            padding: 6px 15px; 
-            border-radius: 5px;
-            font-size: 0.8rem; 
-            font-weight: bold;
-        }
+    @include desktop {
+      flex-direction: row !important; // DESKTOP : FORCE LE CÔTE À CÔTE
+      height: 380px; 
     }
 
-        .promo-img {
-            flex: 1;
-            img { 
-                width: 100%; 
-                height: 100%; 
-                object-fit: cover;
-            }
+    .promo-text {
+      flex: 1;
+      padding: 40px;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      @include desktop {
+        flex: 0 0 45% !important; // Fixe la largeur du texte à 45%
+      }
+
+      h1 {
+        @include section-title(1.7rem);
+        margin-bottom: 15px;
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 50px;
+          height: 1px;
+          background-color: #ddd;
+          margin: 15px auto 0;
         }
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666;
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .button-base {
+        @include button-base;
+        padding: 10px 30px;
+        text-decoration: none;
+      }
     }
+
+    .promo-img {
+      flex: 1;
+      width: 100%;
+      min-height: 250px;
+
+      @include desktop {
+        flex: 0 0 55% !important; // Fixe l'image à 55%
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Remplit l'espace proprement
+        display: block;
+      }
+    }
+  }
 }

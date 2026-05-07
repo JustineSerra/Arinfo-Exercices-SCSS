@@ -1,43 +1,36 @@
-.hero {
-  background-image: url(images/main.jpg);
-  background-size: cover;
-  background-position: center;
-  min-height:30vh;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #ffffff;
-  padding: 20px;
+.hero {
+  background: url('../images/main.jpg') no-repeat center / cover;
+  min-height: 40vh; 
+  padding: 30px 15px; 
+  color: $white;
+  
+  @include flex-center(column, center, center, 25px);
 
   .hero-content {
+    text-align: center;
 
-   p {
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    margin-bottom: 0;
-    text-transform: uppercase;
+    p {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
     }   
 
-  h1 {
-    font-size:1.5rem;
-    font-weight: 300;
-    line-height:1.1;
-    text-transform:uppercase;
+    h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
   }
-}
-
 
   .btn {
-    display:inline-block;
-    background-color: $framboise;
-    margin-top: 30px;
-    padding:10px 20px;
-    text-transform:none;
-    border-radius: 5px;
-    text-decoration: none;
-    }
+    @include button-base;
+    margin-top: 40px; 
+    padding: 10px 25px;
+  }
 }

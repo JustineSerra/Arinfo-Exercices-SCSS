@@ -1,34 +1,32 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .quality {
     padding:20px;
     width:100%;
     text-align: center;
 
-    .item {
-        width:100%;
-        margin-bottom: 60px;
-
-        img {
-            display: block; 
-            width: 100px;
-            margin:0 auto;
-        }
-
-        h1 {
-            width:100%;
-            font-size: 1.5rem;
-            font-weight:900;
-            color:#333;
-            margin: 20px 0 10px 0;
-            text-transform:uppercase;
-        }
-
-        p {
-            width:100%;
-            color: $font-color;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            max-width: 350px;
-            margin: 0 auto;
+    .container {
+        @include flex-center(column);
+        @include desktop {
+            @include flex-center(row,space-between,flex-start,20px)
         }
     }
+
+    .item {
+        @include desktop{
+            margin-bottom: 0;
+            flex: 1;
+        }
+
+        img {       
+        width: 100px;
+        margin:0 auto;
+        }
+    }
+
+        h1 {
+            @include section-title;
+            color:#333;
+        }
 }

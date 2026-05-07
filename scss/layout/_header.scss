@@ -1,35 +1,58 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 header {
-  text-align: center;
-  padding: 20px 0;
+  .container {
+    @include flex-center(column, center, center, 10px); 
+    padding: 10px 0;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+  }
 
   .logo {
-  font-size: 2.2rem;
-  font-weight:bold;
-  color:$footer-color;
-  margin-bottom: 10px;
+    font-size: 2.2rem;
+    white-space: nowrap;
+    font-weight: bold;
+    color: $footer-color;
+    margin-bottom: 5px;
 
-  span {
-    color: $framboise;
+    @include desktop {
+      margin-bottom: 0;
+    }
+
+    span {
+      color: $framboise;
+    }
   }
-}
 
   nav {
-    ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items:center;
-      flex-wrap:wrap;
-      gap: 10px;
+    width: 100%;
 
-      li a {
-        text-decoration: none;
-        color: $font-color;
-        font-weight: bold;
-        font-size: 0.8rem;
+    ul {
+      @include flex-center(row, center, center, 8px);
+      list-style: none;
+      flex-wrap: nowrap; 
+
+      @include desktop {
+        gap: 30px;
+      }
+
+      li {
+        a {
+          text-decoration: none;
+          color: $font-color;
+          font-weight: bold;
+          font-size: 0.75rem;
+
+          @include desktop {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+          }
+        }
       }
     }
   }
