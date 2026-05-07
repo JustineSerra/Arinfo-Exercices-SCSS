@@ -1,0 +1,15 @@
+.framboise {
+    background-color: $framboise;
+    color: $white;
+    border: none;
+    padding: 10px 25px;
+    font-family: $font-main;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+
+    &:hover {
+        background-color: darken($framboise, 10%);
+    }
+}

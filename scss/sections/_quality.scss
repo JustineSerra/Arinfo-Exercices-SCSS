@@ -1,0 +1,29 @@
+.quality {
+    padding: 50px 20px;
+    text-align: center;
+
+    .item {
+        margin-bottom: 40px;
+        
+        img {
+            width: 120px;
+            border: 2px solid $footer-color;
+            border-radius: 50%;
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            color: $footer-color;
+            margin: 15px 0;
+        }
+
+        p {
+            color: $font-color;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    }
+}
