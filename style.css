@@ -44,7 +44,7 @@ a {
   transition: 0.3s;
 }
 .button-base:hover {
-  background-color: rgb(214.7945205479, 25.2054794521, 110.6849315068);
+  background-color: #E83B89;
 }
 
 .container {
@@ -214,7 +214,7 @@ footer p {
   transition: 0.3s;
 }
 .contact button:hover, .contact .btn-submit:hover {
-  background-color: rgb(214.7945205479, 25.2054794521, 110.6849315068);
+  background-color: #E83B89;
 }
 .contact button, .contact .btn-submit {
   margin-top: 20px;
@@ -224,118 +224,65 @@ footer p {
 }
 
 .hero {
-  background: url("../images/main.jpg") no-repeat center/cover;
-  min-height: 40vh;
-  padding: 30px 15px;
-  color: #FFFFFF;
+  padding: 40px 0;
+  background-color: #eeeeee;
+  width: 100%;
+}
+.hero .container {
+  width: 95%;
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 25px;
 }
-.hero .hero-content {
-  text-align: center;
-}
-.hero .hero-content p {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
-.hero .hero-content h1 {
-  font-size: 2rem;
-  font-weight: 900;
-  line-height: 1.1;
-  text-transform: uppercase;
-}
-.hero .btn {
-  display: inline-block;
-  background-color: #E83B89;
-  color: #FFFFFF;
-  padding: 10px 25px;
-  border-radius: 4px;
-  font-weight: bold;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.hero .btn:hover {
-  background-color: rgb(214.7945205479, 25.2054794521, 110.6849315068);
-}
-.hero .btn {
-  margin-top: 40px;
-  padding: 10px 25px;
-}
-
-.promotion {
-  padding: 60px 0;
-  background-color: #f8f8f8;
-}
-.promotion .container {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center;
-  gap: 40px;
-  width: 90%;
-  margin: 0 auto;
-}
-.promotion .promo-card {
-  display: flex !important;
-  flex-direction: column;
-  background-color: #FFFFFF;
+.hero .promo-card {
   width: 100%;
-  max-width: 950px;
-  border-radius: 15px;
+  min-height: 220px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
-@media screen and (min-width: 1024px) {
-  .promotion .promo-card {
-    flex-direction: row !important;
-    height: 380px;
-  }
-}
-.promotion .promo-card .promo-text {
-  flex: 1;
-  padding: 40px;
-  display: flex !important;
-  flex-direction: column !important;
+.hero .promo-card .promo-text {
+  flex: 0 0 50%;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 15px;
   text-align: center;
 }
-@media screen and (min-width: 1024px) {
-  .promotion .promo-card .promo-text {
-    flex: 0 0 45% !important;
-  }
-}
-.promotion .promo-card .promo-text h1 {
-  font-size: 1.7rem;
+.hero .promo-card .promo-text h1 {
+  font-size: 1.2rem;
   font-weight: 900;
   text-transform: uppercase;
   margin: 20px 0 10px 0;
-  margin-bottom: 15px;
-  position: relative;
+  margin: 0;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 5px;
+  width: 90%;
+  white-space: nowrap;
 }
-.promotion .promo-card .promo-text h1::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 1px;
-  background-color: #ddd;
-  margin: 15px auto 0;
-}
-.promotion .promo-card .promo-text p {
-  font-size: 1rem;
-  color: #666;
+.hero .promo-card .promo-text p {
+  font-size: 0.9rem;
   font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+  width: 100%;
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: none;
 }
-.promotion .promo-card .promo-text .button-base {
+.hero .promo-card .promo-text .button-base {
   display: inline-block;
   background-color: #E83B89;
   color: #FFFFFF;
@@ -347,42 +294,108 @@ footer p {
   cursor: pointer;
   transition: 0.3s;
 }
-.promotion .promo-card .promo-text .button-base:hover {
-  background-color: rgb(214.7945205479, 25.2054794521, 110.6849315068);
+.hero .promo-card .promo-text .button-base:hover {
+  background-color: #E83B89;
 }
-.promotion .promo-card .promo-text .button-base {
-  padding: 10px 30px;
-  text-decoration: none;
+.hero .promo-card .promo-text .button-base {
+  display: inline-block;
+  width: fit-content;
+  margin: 10px auto 0;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  line-height: 1;
 }
-.promotion .promo-card .promo-img {
+.hero .promo-card .promo-img {
   flex: 1;
-  width: 100%;
-  min-height: 250px;
+  display: flex;
 }
-@media screen and (min-width: 1024px) {
-  .promotion .promo-card .promo-img {
-    flex: 0 0 55% !important;
-    height: 100%;
-  }
-}
-.promotion .promo-card .promo-img img {
+.hero .promo-card .promo-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.quality {
-  padding: 20px;
-  width: 100%;
-  text-align: center;
+.promotion {
+  padding: 40px 0;
+  background-color: transparent;
 }
-.quality .container {
+.promotion .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.promotion .promo-card {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 0;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("images/main.jpg") no-repeat center center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0;
+  text-align: center;
+  color: white;
+}
+.promotion .promo-card h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 20px 0 10px 0;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+.promotion .promo-card p {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+.promotion .promo-card a, .promotion .promo-card .button-base {
+  display: inline-block;
+  background-color: #E83B89;
+  color: #FFFFFF;
+  padding: 10px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.promotion .promo-card a:hover, .promotion .promo-card .button-base:hover {
+  background-color: #E83B89;
+}
+.promotion .promo-card a, .promotion .promo-card .button-base {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 8px 20px;
+}
+
+.quality {
+  padding: 0 0 20px 0;
+  width: 100%;
+  text-align: center;
+  background-color: #FFFFFF;
+}
+.quality .container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 @media screen and (min-width: 1024px) {
   .quality .container {
@@ -393,22 +406,37 @@ footer p {
     gap: 20px;
   }
 }
-@media screen and (min-width: 1024px) {
-  .quality .item {
-    margin-bottom: 0;
-    flex: 1;
-  }
+.quality .item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 .quality .item img {
-  width: 100px;
-  margin: 0 auto;
+  width: 90px;
+  height: auto;
 }
-.quality h1 {
-  font-size: 1.5rem;
+.quality .item h1 {
+  font-size: 1.2rem;
   font-weight: 900;
   text-transform: uppercase;
   margin: 20px 0 10px 0;
   color: #333;
+  margin: 0;
+  text-transform: uppercase;
+}
+.quality .item p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  margin: 0 auto;
+  max-width: 320px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,94 +2,56 @@
 @use '../abstracts/mixins' as *;
 
 .promotion {
-  padding: 60px 0;
-  background-color: #f8f8f8;
+  padding: 40px 0;
+  background-color: transparent;
 
   .container {
-    // Les cartes s'empilent verticalement
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center;
-    gap: 40px;
-    width: 90%;
+    width: 100%;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0 20px;
   }
 
   .promo-card {
-    // IMPORTANT : On force le flex ici pour que texte et image puissent être côte à côte
-    display: flex !important; 
-    flex-direction: column; // Mobile : texte en haut, image en bas
-    background-color: $white;
+    position: relative;
     width: 100%;
-    max-width: 950px;
-    border-radius: 15px;
+    height: 320px;
+    border-radius: 0;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 
-    @include desktop {
-      flex-direction: row !important; // DESKTOP : FORCE LE CÔTE À CÔTE
-      height: 380px; 
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('images/main.jpg') no-repeat center center;
+    background-size: cover;
+
+    @include flex-center(column, center, center);
+    text-align: center;
+    color: white;
+
+    h1 {
+      @include section-title(2.2rem);
+      color: white;
+      margin: 0;
+      line-height: 1.2;
     }
 
-    .promo-text {
-      flex: 1;
-      padding: 40px;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-
-      @include desktop {
-        flex: 0 0 45% !important; // Fixe la largeur du texte à 45%
-      }
-
-      h1 {
-        @include section-title(1.7rem);
-        margin-bottom: 15px;
-        position: relative;
-
-        &::after {
-          content: "";
-          display: block;
-          width: 50px;
-          height: 1px;
-          background-color: #ddd;
-          margin: 15px auto 0;
-        }
-      }
-
-      p {
-        font-size: 1rem;
-        color: #666;
-        font-style: italic;
-        line-height: 1.6;
-        margin-bottom: 20px;
-      }
-
-      .button-base {
-        @include button-base;
-        padding: 10px 30px;
-        text-decoration: none;
-      }
+    p {
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-top: 8px;
+      letter-spacing: 1px;
     }
 
-    .promo-img {
-      flex: 1;
-      width: 100%;
-      min-height: 250px;
-
-      @include desktop {
-        flex: 0 0 55% !important; // Fixe l'image à 55%
-        height: 100%;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; // Remplit l'espace proprement
-        display: block;
-      }
+    a, .button-base {
+      @include button-base;
+      
+      position: absolute;   
+      bottom: 25px; 
+      left: 50%;
+      transform: translateX(-50%);
+      
+      z-index: 10;
+      padding: 8px 20px;
     }
   }
 }

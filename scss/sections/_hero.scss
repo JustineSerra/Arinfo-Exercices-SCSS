@@ -2,35 +2,78 @@
 @use '../abstracts/mixins' as *;
 
 .hero {
-  background: url('../images/main.jpg') no-repeat center / cover;
-  min-height: 40vh; 
-  padding: 30px 15px; 
-  color: $white;
-  
-  @include flex-center(column, center, center, 25px);
+  padding: 40px 0;
+  background-color: #eeeeee; 
+  width: 100%;
 
-  .hero-content {
-    text-align: center;
-
-    p {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 5px;
-      text-transform: uppercase;
-    }   
-
-    h1 {
-      font-size: 2rem;
-      font-weight: 900;
-      line-height: 1.1;
-      text-transform: uppercase;
-    }
+  .container {
+    width: 95%; 
+    max-width: 1100px; 
+    margin: 0 auto;
+    @include flex-center(column, center, center, 25px);
   }
 
-  .btn {
-    @include button-base;
-    margin-top: 40px; 
-    padding: 10px 25px;
+  .promo-card {
+    width: 100%;
+    min-height: 220px; 
+    height: auto;
+    
+    display: flex; 
+    flex-direction: row;
+    background-color: $white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+    .promo-text {
+      flex: 0 0 50%; 
+      padding: 30px 25px;
+      @include flex-center(column, center, center, 15px);
+      text-align: center;
+
+      h1 {
+        @include section-title(1.2rem); 
+        margin: 0;
+        color: #333;
+        border-bottom: 1px solid #f0f0f0;
+        padding-bottom: 5px;
+        width: 90%;
+        white-space: nowrap; 
+      }
+
+      p {
+        font-size: 0.9rem;
+        font-style: italic;
+        color: #666;
+        line-height: 1.5;
+        margin: 0;
+        width: 100%;
+        display: block; 
+        overflow: visible; 
+        -webkit-line-clamp: none; 
+      }
+
+      .button-base {
+        @include button-base;
+        display: inline-block;
+        width: fit-content;
+        margin: 10px auto 0;
+        padding: 8px 16px; 
+        font-size: 0.8rem;
+        line-height: 1;
+      }
+    }
+
+    .promo-img {
+      flex: 1; 
+      display: flex;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
   }
 }

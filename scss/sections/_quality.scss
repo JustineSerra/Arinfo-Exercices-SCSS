@@ -2,31 +2,47 @@
 @use '../abstracts/mixins' as *;
 
 .quality {
-    padding:20px;
-    width:100%;
+    padding: 0 0 20px 0; 
+    width: 100%;
     text-align: center;
+    background-color: $white;
 
     .container {
-        @include flex-center(column);
+        width: 90%;
+        margin: 0 auto;
+        @include flex-center(column, center, center, 30px); 
+
         @include desktop {
-            @include flex-center(row,space-between,flex-start,20px)
+            @include flex-center(row, space-between, flex-start, 20px);
         }
     }
 
     .item {
-        @include desktop{
-            margin-bottom: 0;
-            flex: 1;
-        }
+        flex: 1;
+        @include flex-center(column, center, center, 15px); 
 
         img {       
-        width: 100px;
-        margin:0 auto;
+            width: 90px;
+            height: auto;
         }
-    }
 
         h1 {
-            @include section-title;
-            color:#333;
+            @include section-title(1.2rem);
+            color: #333;
+            margin: 0;
+            text-transform: uppercase;
         }
+
+        p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+            margin: 0 auto;
+            max-width: 320px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
 }
